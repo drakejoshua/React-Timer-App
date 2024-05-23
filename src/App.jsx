@@ -1,118 +1,141 @@
-import './App.css'
+import AppStyles from './App.module.css';
 
 function App() {
 
   return (
     // app container
-    <div className='app'>
+    <div className={ AppStyles.app }>
 
-      {/* timer's clock */}
-      <div className="clock">
+      {/* app's nav */}
+      <nav>
+        <span className={AppStyles.navTitle}>
+          <span className={`material-symbols-outlined ${AppStyles.navTitleIcon}`}>
+            timer
+          </span>
 
-        <svg height="100" width="100" 
-            xmlns="http://www.w3.org/2000/svg" className='clock-stroke'>
+          <span className='nav-title-text'>
+            react timer app
+          </span>
+        </span>
 
-          <circle r="45" cx="50" cy="50" 
-              stroke="green" strokeWidth="3" fill="white"/>
+        <a href="https://github.com/drakejoshua" className={AppStyles.navLink }>
+          made by mabawonku joshua
+        </a>
+      </nav>
 
-          Sorry, your browser does not support inline SVG.  
-        </svg> 
+      {/* timer */}
+      <div className={AppStyles.timer}>
 
-        <div className="clock-hands">
-          <div className="clock-hand-1"></div>
-          <div className="clock-hand-2"></div>
-        </div>
-      </div>
+        {/* timer's clock */}
+        <div className={ AppStyles.clock }>
 
+          <svg xmlns="http://www.w3.org/2000/svg">
+            <circle r="150" cx="50%" cy="50%"/>
 
-      {/* timer's ctn */}
-      <div className="timer">
+            Sorry, your browser does not support inline SVG.  
+          </svg> 
 
-        {/* timer's inputs */}
-        <div className="timer-input-ctn">
-          <div className="timer-input">
-
-            <span className="material-symbols-outlined input-increment-control">
-              keyboard_arrow_up
-            </span>
-
-            <span className='input-value'>
-              23
-            </span>
-            
-            <span className="material-symbols-outlined input-decrement-control">
-              keyboard_arrow_down
-            </span>
-          </div>
-
-          <div className="timer-input">
-
-            <span className="material-symbols-outlined input-increment-control">
-              keyboard_arrow_up
-            </span>
-
-            <span className='input-value'>
-              23
-            </span>
-            
-            <span className="material-symbols-outlined input-decrement-control">
-              keyboard_arrow_down
-            </span>
-          </div>
-
-          <div className="timer-input">
-
-            <span className="material-symbols-outlined input-increment-control">
-              keyboard_arrow_up
-            </span>
-
-            <span className='input-value'>
-              23
-            </span>
-            
-            <span className="material-symbols-outlined input-decrement-control">
-              keyboard_arrow_down
-            </span>
-          </div>
-
-          <div className="timer-input">
-
-            <span className="material-symbols-outlined input-increment-control">
-              keyboard_arrow_up
-            </span>
-
-            <span className='input-value'>
-              23
-            </span>
-            
-            <span className="material-symbols-outlined input-decrement-control">
-              keyboard_arrow_down
-            </span>
+          <div className={AppStyles.clockHands}>
+            <div className={AppStyles.clockHands1}>
+              <div></div>
+            </div>
+            <div className={AppStyles.clockHands2}>
+              <div></div>
+            </div>
+            <div className={ AppStyles.clockKnob }></div>
           </div>
         </div>
 
-        {/* timer's status text */}
-        <p>
-          timer running
-        </p>
 
-        {/* timer's controls */}
-        <div className="timer-controls">
-          <button className='reset-btn'>
-            <span className="material-symbols-outlined">
-              replay
-            </span>
+        {/* timer's ctn */}
+        <div className={ AppStyles.timerCtn }>
 
-            <span>reset</span>
-          </button>
+          {/* timer's inputs */}
+          <div className={ AppStyles.timerInputCtn }>
+            <div className={ AppStyles.timerInput }>
 
-          <button className='stop-btn'>
-            <span className="material-symbols-outlined">
-              stop_circle
-            </span>
+              <span className={`material-symbols-outlined ${ AppStyles.inputIncrementControl }`}>
+                keyboard_arrow_up
+              </span>
 
-            <span>stop</span>
-          </button>
+              <span className={ AppStyles.inputValue }>
+                23 D
+              </span>
+              
+              <span className={`material-symbols-outlined ${ AppStyles.inputDecrementControl }`}>
+                keyboard_arrow_down
+              </span>
+            </div>
+
+            <div className={ AppStyles.timerInput }>
+
+              <span className={`material-symbols-outlined ${ AppStyles.inputIncrementControl }`}>
+                keyboard_arrow_up
+              </span>
+
+              <span className={ AppStyles.inputValue }>
+                23 H
+              </span>
+              
+              <span className={`material-symbols-outlined ${ AppStyles.inputDecrementControl }`}>
+                keyboard_arrow_down
+              </span>
+            </div>
+
+            <div className={ AppStyles.timerInput }>
+
+              <span className={`material-symbols-outlined ${ AppStyles.inputIncrementControl }`}>
+                keyboard_arrow_up
+              </span>
+
+              <span className={ AppStyles.inputValue }>
+                23 M
+              </span>
+              
+              <span className={`material-symbols-outlined ${ AppStyles.inputDecrementControl }`}>
+                keyboard_arrow_down
+              </span>
+            </div>
+
+            <div className={ AppStyles.timerInput }>
+
+              <span className={`material-symbols-outlined ${ AppStyles.inputIncrementControl }`}>
+                keyboard_arrow_up
+              </span>
+
+              <span className={ AppStyles.inputValue }>
+                23 S
+              </span>
+              
+              <span className={`material-symbols-outlined ${ AppStyles.inputDecrementControl }`}>
+                keyboard_arrow_down
+              </span>
+            </div>
+          </div>
+
+          {/* timer's status text */}
+          <p className={ AppStyles.timerStatusText }>
+            timer running
+          </p>
+
+          {/* timer's controls */}
+          <div className={ AppStyles.timerControlsCtn }>
+            <button className={ AppStyles.resetBtn }>
+              <span className="material-symbols-outlined">
+                replay
+              </span>
+
+              <span>reset</span>
+            </button>
+
+            <button className={ AppStyles.toggleBtn }>
+              <span className="material-symbols-outlined">
+                stop_circle
+              </span>
+
+              <span>stop</span>
+            </button>
+          </div>
         </div>
       </div>
     </div>

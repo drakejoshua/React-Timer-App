@@ -1,0 +1,157 @@
+:root {
+  --marginal-padding: 150px;
+}
+body{
+  background-color: ivory;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Inter, sans-serif;
+  box-sizing: border-box;
+  border: 0px;
+  background-color: transparent;
+  /* outline-color: blue;
+  outline-width: 2px;
+  outline-style: solid; */
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: 100vh;
+}
+
+nav {
+  padding: 25px var(--marginal-padding);
+  display: flex;
+  justify-content: space-between;
+}
+.navTitle {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  text-transform: capitalize;
+  font-weight: 600;
+  gap: 0px 8px;
+}
+.navTitleIcon {
+  font-size: 30px;
+}
+.navLink {
+  text-transform: capitalize;
+}
+
+
+.timer {
+  display: flex;
+  flex-grow: 1;
+  padding: 0px var(--marginal-padding);
+  gap: 0px 10%;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.clock {
+  position: relative;
+  top: 0;
+  width: 320px;
+  height: 320px;
+}
+svg, .clockHands {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+svg > circle {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 5px;
+}
+
+.clockHands1, .clockHands2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% ) rotate(270deg);
+  width: 90%;
+  height: 5px;
+}
+.clockHands2 {
+  transform: translate( -50%, -50% ) rotate(360deg);
+}
+.clockKnob {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate( -50%, -50% ) rotate(270deg);
+  background-color: black;
+}
+.clockHands1 > div, .clockHands2 > div {
+  width: 50%;
+  margin-left: auto;
+  height: 100%;
+  background-color: black;
+  border-radius: 8px;
+}
+
+
+.timerCtn {
+  width: 50%;
+}
+.timerInputCtn {
+  display: flex;
+  gap: 0px 40px;
+  margin-bottom: 30px;
+}
+.timerInput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.inputIncrementControl, .inputDecrementControl {
+  font-size: 28px;
+  cursor: pointer;
+}
+.inputValue {
+  font-size: 38px;
+  font-weight: 700;
+}
+
+
+.timerStatusText {
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+
+.timerControlsCtn {
+  display: flex;
+  gap: 0px 20px;
+}
+.resetBtn, .toggleBtn {
+  padding: 8px 15px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 0px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.resetBtn {
+  background-color: black;
+  color: white;
+}
+.toggleBtn {
+  border: medium solid black;
+}
