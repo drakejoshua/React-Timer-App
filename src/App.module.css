@@ -115,11 +115,14 @@ svg > circle {
 .timerInput {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  
 }
 .inputIncrementControl, .inputDecrementControl {
   font-size: 28px;
   cursor: pointer;
+  display: block;
+  text-align: center;
 }
 .inputValue {
   font-size: 38px;
@@ -151,7 +154,25 @@ svg > circle {
 .resetBtn {
   background-color: black;
   color: white;
+  border: medium solid transparent;
 }
 .toggleBtn {
   border: medium solid black;
+}
+
+
+
+/* adding interactivity and responsiveness to the page */
+.inputIncrementControl:hover, .inputDecrementControl:hover {
+  background-color: black;
+  color: white;
+}
+.resetBtn:hover {
+  border-color: black;
+  background-color: transparent;
+  color: black;
+}
+.toggleBtn:hover {
+  background-color: black;
+  color: white;
 }
