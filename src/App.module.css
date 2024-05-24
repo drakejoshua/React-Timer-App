@@ -1,22 +1,27 @@
+/* base styles */
 :root {
   --marginal-padding: 150px;
 }
+
+/* app's background color */
 body{
   background-color: ivory;
 }
 
+/* reset styles for all elements */
 * {
   margin: 0px;
   padding: 0px;
-  font-family: Inter, sans-serif;
+  font-family: Inter, 'Segoe UI', sans-serif;
   box-sizing: border-box;
   border: 0px;
   background-color: transparent;
-  /* outline-color: blue;
-  outline-width: 2px;
-  outline-style: solid; */
 }
 
+
+
+
+/* styles for the app layout */
 .app {
   display: flex;
   flex-direction: column;
@@ -24,9 +29,13 @@ body{
   height: 100vh;
 }
 
+
+/* navbar styles */
 nav {
   padding: 25px var(--marginal-padding);
   display: flex;
+  gap: 15px 0px;
+  align-items: center;
   justify-content: space-between;
 }
 .navTitle {
@@ -45,9 +54,11 @@ nav {
 }
 
 
+/* styling the timer section */
 .timer {
   display: flex;
   flex-grow: 1;
+  flex-wrap: wrap;
   padding: 0px var(--marginal-padding);
   gap: 0px 10%;
   align-items: center;
@@ -55,6 +66,8 @@ nav {
   width: 100%;
 }
 
+
+/* styling the app's moving clock */
 .clock {
   position: relative;
   top: 0;
@@ -73,7 +86,6 @@ svg > circle {
   stroke: black;
   stroke-width: 5px;
 }
-
 .clockHands1, .clockHands2 {
   position: absolute;
   top: 50%;
@@ -104,13 +116,15 @@ svg > circle {
 }
 
 
+
+/* styling the timer's inputs and controls */
 .timerCtn {
   width: 50%;
 }
 .timerInputCtn {
   display: flex;
-  gap: 0px 40px;
-  margin-bottom: 30px;
+  justify-content: space-between;
+  margin-bottom: 25px;
 }
 .timerInput {
   display: flex;
@@ -130,17 +144,19 @@ svg > circle {
 }
 
 
+/* timer's status text */
 .timerStatusText {
   text-transform: capitalize;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-
+/* timer's control buttons */
 .timerControlsCtn {
   display: flex;
   gap: 0px 20px;
 }
 .resetBtn, .toggleBtn {
+  flex-grow: 0.5;
   padding: 8px 15px;
   font-size: 17px;
   font-weight: 500;
@@ -175,4 +191,59 @@ svg > circle {
 .toggleBtn:hover {
   background-color: black;
   color: white;
+}
+
+
+
+/* adding responsive styles */
+@media screen and ( max-width: 1050px ) {
+  /* change the margins on the side of all elements */
+  :root {
+    --marginal-padding: 90px;
+  }
+
+
+  /* change the respective font-size of corresponding 
+    elements to make them look better */
+  .navTitle {
+    font-size: 18px;
+  }
+  .navTitleIcon {
+    font-size: 25px;
+  }
+  .navLink {
+    font-size: 14px;
+  }
+
+  .inputValue {
+    font-size: 20px;
+  }
+  .resetBtn, .toggleBtn {
+    font-size: 14px;
+  }
+}
+
+@media screen and ( max-width: 900px ) {
+  /* change the margins on the side of all elements */
+  :root {
+    --marginal-padding: 15px;
+  }
+
+  /* re-do nav layout for better appearance */
+  nav {
+    padding: 20px var(--marginal-padding);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* widen the timerCtn in order to have more space 
+      for timer inputs and controls */
+  .timerCtn {
+    width: 90%;
+  }
+
+  /* add less pad to the timer control buttons */
+  .resetBtn, .toggleBtn {
+    padding: 6px 10px;
+  }
 }
